@@ -9,4 +9,5 @@
     text-align: center;
     font-size: 18px;
     z-index: 9999; /* Ensure it's above other elements */
+    font-family: 'Inter', sans-serif;
   }

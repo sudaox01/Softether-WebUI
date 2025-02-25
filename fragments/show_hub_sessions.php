@@ -12,6 +12,8 @@ $sessions = GetVirtualHubSessions($_SESSION['host'], $_SESSION['port'], $_SESSIO
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Softether Server Manager</title>
+        <link rel="preload" href="static/font/Inter-VariableFont_opsz,wght.ttf" as="font" type="font/ttf" crossorigin="anonymous">
+        <link rel="stylesheet" href="static/css/fonts.css">
         <link rel="stylesheet" href="static/css/index.css">
         <link rel="stylesheet" href="static/css/dialog.css">
         <script>
@@ -27,7 +29,7 @@ $sessions = GetVirtualHubSessions($_SESSION['host'], $_SESSION['port'], $_SESSIO
             <!-- Virtual Hub Sessions -->
             <div id="SessionInfoDialog" style="display: none;" dialog_id="SessionInfoDialog">
                 <button onclick="CloseSessionInfoDialog();">X</button><br>
-                <span id="SessionInfoSpan"></span>
+                <span id="SessionInfoSpan" style="font-weight: 300;"></span>
             </div>
             <table style="width:100%">
             <tr>

@@ -1,16 +1,7 @@
-<<<<<<< HEAD
 {
     "jsonrpc": "2.0",
     "id": "rpc_call_id",
     "method": "GetHubStatus",
     "params": {
     }
-=======
-{
-    "jsonrpc": "2.0",
-    "id": "rpc_call_id",
-    "method": "GetHubStatus",
-    "params": {
-    }
->>>>>>> 26b8f4e921bf54ba1ab4248fe78457aa8bb234dd
 }

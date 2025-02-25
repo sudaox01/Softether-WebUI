@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {
     "jsonrpc": "2.0",
     "id": "rpc_call_id",
@@ -5,4 +6,13 @@
     "params": {
         "r": "g"
     }
+=======
+{
+    "jsonrpc": "2.0",
+    "id": "rpc_call_id",
+    "method": "EnumHub",
+    "params": {
+        "r": "g"
+    }
+>>>>>>> 26b8f4e921bf54ba1ab4248fe78457aa8bb234dd
 }  

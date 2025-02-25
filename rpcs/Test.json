@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {
     "jsonrpc": "2.0",
     "id": "rpc_call_id",
@@ -5,4 +6,13 @@
     "params": {
       "IntValue_u32": 0
     }
+=======
+{
+    "jsonrpc": "2.0",
+    "id": "rpc_call_id",
+    "method": "Test",
+    "params": {
+      "IntValue_u32": 0
+    }
+>>>>>>> 26b8f4e921bf54ba1ab4248fe78457aa8bb234dd
 }  

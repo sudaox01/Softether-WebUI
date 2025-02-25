@@ -12,7 +12,6 @@ $sessions = GetVirtualHubSessions($_SESSION['host'], $_SESSION['port'], $_SESSIO
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Softether Server Manager</title>
-        <link rel="preload" href="static/font/Inter-VariableFont_opsz,wght.ttf" as="font" type="font/ttf" crossorigin="anonymous">
         <link rel="stylesheet" href="static/css/fonts.css">
         <link rel="stylesheet" href="static/css/index.css">
         <link rel="stylesheet" href="static/css/dialog.css">

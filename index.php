@@ -13,6 +13,7 @@ if($_GET['f'] == "admin") {
 // login
 if($_GET['f'] == "login") {
     require("fragments/login.php");
+    require("fragments/login_page.html");
     die();
 }
 // logout

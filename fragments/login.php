@@ -30,8 +30,11 @@ if($_SERVER['REQUEST_METHOD'] == "POST") {
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Softether Server Manager</title>
+        <link rel="stylesheet" href="static/css/index.css">
+        <script src="static/js/server_saver.js"></script>
+        <script src="static/js/login.js"></script>
     </head>
-    <body>
+    <body onload="PrintSavedServers();">
         <div id="login">
             <!-- Login -->
              <center>
@@ -42,6 +45,10 @@ if($_SERVER['REQUEST_METHOD'] == "POST") {
                     <input type="password" placeholder="Password" name="pass"><br>
                     <input type="submit" value="Login">
                 </form>
+                <button onclick="SaveServer2();">Save</button>
+                <h3>Saved Servers:</h3>
+                <div id="SavedServersDiv">
+                </div>
             </center>
         </div>
     </body>

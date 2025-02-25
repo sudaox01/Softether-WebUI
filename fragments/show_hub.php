@@ -32,7 +32,7 @@ $numsessions = $hubinfo['NumSessions_u32'];
             <!-- Virtual Hub -->
             <span>Name: <?php echo($name); ?></span><br>
             <span>Status: <?php echo($online); ?></span><br>
-            <span>Users: <?php echo($numusers); ?></span><br>
+            <span><a href="#" onclick="ShowHubUsers(GetHubFromUrl());">Users: <?php echo($numusers); ?></a></span><br>
             <span>Groups: <?php echo($numgroups); ?></span><br>
             <span>Access Lists: <?php echo($numac); ?></span><br>
             <span><a href="javascript:ShowHubSessions(GetHubFromUrl());">Sessions: <?php echo($numsessions); ?></a></span><br>

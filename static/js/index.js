@@ -26,7 +26,10 @@ function ShowHub(hub) {
 }
 function ShowHubSessions(hub) {
     // Show hub in a new tab
-    let popup = window.open("?f=show_hub_sessions&hub=" + hub, "PopupWindow2", "width=800,height=400");
+    let popup = window.open("?f=show_hub_sessions&hub=" + hub, "PopupWindowSessions", "width=800,height=400");
+}
+function ShowHubUsers(hub) {
+    let popup = window.open("?f=show_hub_users&hub=" + hub, "PopupWindowUsers", "width=800,height=400");
 }
 function ShowHubSessionInfo(host, port, user, pass, hub, session) {
     const xhr = new XMLHttpRequest();

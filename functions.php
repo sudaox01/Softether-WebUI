@@ -124,6 +124,26 @@ function GetVirtualHubSessionStatus($host, $port, $user, $pass, $hub, $session) 
         return array("Exception" => $e);
     }
 }
+function GetVirtualHubUsers($host, $port, $user, $pass, $hub) {
+    // Get virtual hub sessions
+    $rpc = json_decode(file_get_contents("rpcs/EnumUser.json"), true);
+    $rpc['params']['HubName_str'] = $hub;
+    $res = SendRequest($host, $port, $user, $pass, $rpc);
+    try {
+        $response = json_decode($res, true);
+        if(isset($response['result'])) {
+            // Login succcessful, get hubs
+            return $response['result']['UserList'];
+        }
+        else {
+            // Login failed
+            return array();
+        }
+    }
+    catch(Exception $e) {
+        return array("Exception" => $e);
+    }
+}
 function GetTcpListeners($host, $port, $user, $pass) {
     // Get TCP Listeners
     $rpc = json_decode(file_get_contents("rpcs/EnumListener.json"), true);

@@ -30,3 +30,8 @@ if($_GET['f'] == "show_hub_sessions") {
     require("fragments/show_hub_sessions.php");
     die();
 }
+// show_hub_users
+if($_GET['f'] == "show_hub_users") {
+    require("fragments/show_hub_users.php");
+    die();
+}

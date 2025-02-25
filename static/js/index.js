@@ -42,12 +42,16 @@ function ShowHubSessionInfo(host, port, user, pass, hub, session) {
             const responseData = JSON.parse(xhr.responseText);
             console.log(Object.keys(responseData).length);
             if(Object.keys(responseData).length > 1) {
+                // Parse dates and numbers
                 const connected_time = ParseSEDate(responseData['CurrentConnectionEstablishTime_dt']);
                 const client_buildnum = ConvertLittleEndian(responseData['ClientProductBuild_u32']);
                 const client_prodver = ConvertLittleEndian(responseData['ClientProductVer_u32']);
                 const client_port = ConvertLittleEndian(responseData['ClientPort_u32']);
-                const alertText = "Cipher: " + responseData['CipherName_str'] + "\nHostname: " + responseData['ClientHostname_str'] + "\nClient IP: " + responseData['ClientIpAddress_ip'] + "\nClient OS Name: " + responseData['ClientOsName_str'] + "\nClient OS Product ID: " + responseData['ClientOsProductId_str'] + "\nClient OS Version: " + responseData['ClientOsVer_str'] + "\nClient Product Build Number: " + client_buildnum + "\nClient Product Version: " + client_prodver + "\nClient Product Name: " + responseData['ClientProductName_str'] + "\nClient IP: " + responseData['Client_Ip_Address_ip'] + "\nClient Port: " + client_port + "\nCurrent Connection Established: " + connected_time;
-                window.alert(alertText);
+                // Make text for span
+                const alertText = "Cipher: " + responseData['CipherName_str'] + "<br>Hostname: " + responseData['ClientHostname_str'] + "<br>Client IP: " + responseData['ClientIpAddress_ip'] + "<br>Client OS Name: " + responseData['ClientOsName_str'] + "<br>Client OS Product ID: " + responseData['ClientOsProductId_str'] + "<br>Client OS Version: " + responseData['ClientOsVer_str'] + "<br>Client Product Build Number: " + client_buildnum + "<br>Client Product Version: " + client_prodver + "<br>Client Product Name: " + responseData['ClientProductName_str'] + "<br>Client IP: " + responseData['Client_Ip_Address_ip'] + "<br>Client Port: " + client_port + "<br>Current Connection Established: " + connected_time;
+                // Set attributes of dialog
+                document.getElementById("SessionInfoDialog").style.display = "block";
+                document.getElementById("SessionInfoSpan").innerHTML = alertText;
                 console.log(responseData);
             }
             else {
@@ -68,4 +72,8 @@ function ShowHubSessionInfo(host, port, user, pass, hub, session) {
     params.append('hub', hub);
     params.append('session', session);
     xhr.send(params.toString());
+}
+function CloseSessionInfoDialog() {
+    document.getElementById("SessionInfoDialog").style.display = "none";
+    document.getElementById("SessionInfoSpan").innerHTML = "";
 }

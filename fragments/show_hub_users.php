@@ -29,13 +29,16 @@ $users = GetVirtualHubUsers($_SESSION['host'], $_SESSION['port'], $_SESSION['use
                 <th>Group Name</th>
                 <th>Real Name</th>
                 <th># Of Logins</th>
+                <th>Transfer Bytes</th>
             </tr>
             <?php 
                 foreach($users as $user) {
+                    $transfer_bytes = $user['Ex.Recv.BroadcastBytes_u64'] + $user['Ex.Recv.UnicastBytes_u64'] + $user['Ex.Send.BroadcastBytes_u64'] + $user['Ex.Send.UnicastBytes_u64'];
                     echo('<td>' . $user['Name_str'] . '</td>');
                     echo('<td>' . $user['GroupName_str'] . '</td>'); 
                     echo('<td>' . $user['Realname_utf'] . '</td>'); 
                     echo('<td>' . $user['NumLogin_u32'] . '</td>');
+                    echo('<td>' . number_format($transfer_bytes) .  '</td>');
                     echo('</tr>');
                 }
             ?>
